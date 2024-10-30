@@ -31,7 +31,7 @@ def valida_token(token, output=False):
     try:
         if output:
             return decode(token, key=getenv("SECRET"), algorithms=["HS256"])
-        # en caso de que el output sea true se retorna mensaje al usuario, sino solo se ejecuta
+        # en caso de que el output sea true se retorna el payload al usuario, sino solo se ejecuta
         decode(token, key=getenv("SECRET"), algorithms=["HS256"])
 
     except exceptions.DecodeError:
